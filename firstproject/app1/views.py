@@ -21,3 +21,9 @@ def personinfo(request):
     return JsonResponse({"status":"sucess","data":info})
 def temp1(request):
     return render(request,"./simple.html")
+def ticket(request):
+    movie=request.GET.get("movie","Rajasaab")
+    show=request.GET.get("show","secondshow")
+    nooftickets=request.GET.get("no.oftickets","6")
+    info={"movie":movie,"show":show,"no.oftickets":nooftickets}
+    return JsonResponse({"status":"success","data":info})
